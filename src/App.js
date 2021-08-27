@@ -1,9 +1,5 @@
 function App() {
-  return (
-    <div className="App">
-      Ethereum Fullstack Template
-    </div>
-  );
+  return <div className="App">Block the Doc!</div>;
 }
 
 export default App;
