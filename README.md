@@ -3,10 +3,8 @@
 </p>
 
 <p align="center">
-   
    <a href="https://github.com/HarshBalyan/block-the-doc/issues"><img src="https://img.shields.io/github/issues/HarshBalyan/block-the-doc.svg" alt="GitHub issues"></a>
-   
-   <a href="https://raw.githubusercontent.com/HarshBalyan/block-the-doc/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a>
+    <a href="https://raw.githubusercontent.com/HarshBalyan/block-the-doc/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a>
 </p>
 
 <p align="center"><b>Ethereum DAAP to mint Certificates as NFT</b></p>
@@ -27,3 +25,14 @@ Trustless issuance of certificates as NFTs to the recipient on a blockchain(e.g.
   - Document can't be forged as docs are stored against a cryptographic hash which change on any attempt made to change the doc
 - Easy verifiability
   - The issuance can easily be tracked using the token on a block explorer(e.g. Etherscan)
+
+## What’s Included?
+
+Your environment will have following set up:
+
+- A sample frontend: Sample application which uses [Create React App](https://github.com/facebook/create-react-app) along with its test.
+- [Hardhat](https://hardhat.org/): An Ethereum development task runner and testing network.
+- [Mocha](https://mochajs.org/): A JavaScript test runner.
+- [Chai](https://www.chaijs.com/): A JavaScript assertion library.
+- [ethers.js](https://docs.ethers.io/ethers.js/html/): A JavaScript library for interacting with Ethereum.
+- [Waffle](https://github.com/EthWorks/Waffle/): To have Ethereum-specific Chai assertions/mathers.
