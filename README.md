@@ -26,11 +26,9 @@ Trustless issuance of certificates as NFTs to the recipient on a blockchain(e.g.
 - Easy verifiability
   - The issuance can easily be tracked using the token on a block explorer(e.g. Etherscan)
 
-## What’s Included?
+## Technology Stack
 
-Your environment will have following set up:
-
-- A sample frontend: Sample application which uses [Create React App](https://github.com/facebook/create-react-app) along with its test.
+- React frontend: Front end application which uses [React Js](https://github.com/facebook/react/).
 - [Hardhat](https://hardhat.org/): An Ethereum development task runner and testing network.
 - [Mocha](https://mochajs.org/): A JavaScript test runner.
 - [Chai](https://www.chaijs.com/): A JavaScript assertion library.
