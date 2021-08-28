@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import ViewDocument from "./pages/ViewDocument";
 import Home from "./pages/Home";
 import Issue from "./pages/Issue";
 import Profile from "./pages/Profile";
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route path="/my-profile">
             <Profile />
+          </Route>
+          <Route path="/view-document">
+            <ViewDocument />
           </Route>
           <Route path="/">
             <Home />
