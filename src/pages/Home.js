@@ -1,3 +1,5 @@
+import Button from "../components/Button";
+
 function Home() {
   return (
     <section className="text-gray-600 body-font">
@@ -32,9 +34,7 @@ function Home() {
             src="/sign-in-metamask.png"
           />
           <div className="flex justify-center">
-            <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-              Sign In to Metamask
-            </button>
+            <Button label="Sign In to Metamask " />
           </div>
         </div>
       </div>
