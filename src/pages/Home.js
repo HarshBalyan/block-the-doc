@@ -1,6 +1,11 @@
 import Button from "../components/Button";
+import { requestAccount } from "../utils/common";
 
 function Home() {
+  async function signIn() {
+    await requestAccount();
+    console.log("Connected");
+  }
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-14 md:flex-row flex-col items-center">
@@ -34,7 +39,7 @@ function Home() {
             src="/sign-in-metamask.png"
           />
           <div className="flex justify-center">
-            <Button label="Sign In to Metamask " />
+            <Button label="Sign In to Metamask " handleClick={signIn} />
           </div>
         </div>
       </div>
