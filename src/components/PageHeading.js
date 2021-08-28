@@ -169,7 +169,7 @@ const PageHeading = ({ title }) => {
         <div className="relative flex justify-between items-center">
           <div className="text-sm font-medium text-white text-3xl">{title}</div>
           <Link to="/my-profile">
-            <button class="whitespace-nowrap text-right inline-flex rounded-md bg-white py-2 px-3 text-sm font-bold uppercase text-blue-500 hover:bg-opacity-90">
+            <button className="whitespace-nowrap text-right inline-flex rounded-md bg-white py-2 px-3 text-sm font-bold uppercase text-blue-500 hover:bg-opacity-90">
               👤 My Profile
             </button>
           </Link>
