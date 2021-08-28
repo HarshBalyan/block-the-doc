@@ -1,6 +1,6 @@
 const PageHeading = ({ title }) => {
   return (
-    <div className="py-2 bg-gradient-to-r from-indigo-600 to-light-blue-600 overflow-hidden shadow">
+    <div className="py-2 bg-gradient-to-r from-blue-500 to-blue-600 overflow-hidden shadow">
       <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <svg
           fill="none"
