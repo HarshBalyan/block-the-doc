@@ -36,7 +36,7 @@ function Home() {
             </li>
           </ul>
         </div>
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 text-center">
+        <div className="lg:max-w-lg lg:w-full py-4 md:w-1/2 w-5/6 text-center border-2 border-fuchsia-600 rounded-md">
           <img
             className="inline-block object-cover object-center rounded"
             alt="hero"
