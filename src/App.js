@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Issue from "./pages/Issue";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
           <Route path="/issue">
             <Issue />
           </Route>
-          <Route path="/users">
-            <div>Hola users</div>
+          <Route path="/my-profile">
+            <Profile />
           </Route>
           <Route path="/">
             <Home />
