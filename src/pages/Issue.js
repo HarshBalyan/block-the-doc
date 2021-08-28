@@ -1,14 +1,13 @@
 import Button from "../components/Button";
+import PageHeading from "../components/PageHeading";
 
 function Issue() {
   return (
     <section className="text-gray-600 body-font relative ">
+      <PageHeading title="Issue Certificate" />
       <div className="container px-5 py-10 mx-auto w-2/3 mt-4 rounded-md shadow border-2 border-fuchsia-600">
         <div className="flex flex-col text-center w-full mb-4">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-            Issue Certificate
-          </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-base font-bold">
             Please select a Certificate to upload
           </p>
         </div>
