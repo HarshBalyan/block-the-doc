@@ -1,11 +1,15 @@
+import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import { requestAccount } from "../utils/common";
 
 function Home() {
+  let history = useHistory();
+
   async function signIn() {
     await requestAccount();
-    console.log("Connected");
+    history.push("/issue");
   }
+
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-14 md:flex-row flex-col items-center">
