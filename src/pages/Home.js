@@ -13,8 +13,8 @@ function Home() {
               Trustless issuance of certificates as NFTs to the recipient.
             </li>
             <li>
-              The underlying certificate attached to an NFT will be stored on a
-              distributed file system(e.g. IPFS) This will remove the need for
+              The underlying certificate is attached to an NFT will be stored on
+              a distributed file system(e.g. IPFS) This will remove the need for
               issuer or recipient to secure an accessible copy of the
               certificate
             </li>
