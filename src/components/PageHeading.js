@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const PageHeading = ({ title }) => {
   return (
     <div className="py-2 bg-gradient-to-r from-blue-500 to-blue-600 overflow-hidden shadow">
@@ -164,8 +166,13 @@ const PageHeading = ({ title }) => {
             </linearGradient>
           </defs>
         </svg>
-        <div className="relative flex justify-left items-center">
+        <div className="relative flex justify-between items-center">
           <div className="text-sm font-medium text-white text-3xl">{title}</div>
+          <Link to="/my-profile">
+            <button class="whitespace-nowrap text-right inline-flex rounded-md bg-white py-2 px-3 text-sm font-bold uppercase text-blue-500 hover:bg-opacity-90">
+              👤 My Profile
+            </button>
+          </Link>
         </div>
       </div>
     </div>
