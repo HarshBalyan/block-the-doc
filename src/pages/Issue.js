@@ -1,10 +1,13 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import PageHeading from "../components/PageHeading";
+import { mintCertificate } from "../utils/ContractProvider";
 const { create } = require("ipfs-http-client");
 
 function Issue() {
   const [fileBuffer, setFileBuffer] = useState();
+  const [name, setName] = useState();
+  const [recipientAddress, setRecipientAddress] = useState();
 
   // Capture the file and send to IPFS
   function captureFile(e) {
@@ -19,8 +22,8 @@ function Issue() {
   async function issueCertificate(e) {
     e.preventDefault();
     const client = create("https://ipfs.infura.io:5001");
-    const ipfsHash = await client.add(fileBuffer);
-    console.log(ipfsHash);
+    const ipfsHash = (await client.add(fileBuffer)).path;
+    await mintCertificate(recipientAddress, name, ipfsHash);
   }
 
   return (
@@ -47,10 +50,30 @@ function Issue() {
                     type="text"
                     id="name"
                     name="name"
+                    onChange={(e) => setName(e.target.value)}
                     className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
               </div>
+
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Recipient Wallet Address
+                  </label>
+                  <input
+                    type="text"
+                    id="recipient_address"
+                    name="recipient_address"
+                    onChange={(e) => setRecipientAddress(e.target.value)}
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+              </div>
+
               <div className="p-2 w-full">
                 <div className="relative">
                   <label

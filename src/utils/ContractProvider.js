@@ -7,8 +7,15 @@ function getCertificateContract() {
 }
 
 async function mintCertificate(recipientAddress, name, ipfsHash) {
+  console.log("Attempting to mint", { recipientAddress, name, ipfsHash });
   const contract = getCertificateContract();
   console.log(contract);
+  const response = await contract.mintAndTransfer(
+    recipientAddress,
+    name,
+    ipfsHash
+  );
+  console.log(response);
 }
 
 async function isIssuer() {
