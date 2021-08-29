@@ -23,7 +23,7 @@ function ViewDocument() {
       {document && (
         <div className="container px-5 py-5 mx-auto flex flex-col">
           <div className="lg:w-4/6 mx-auto">
-            <div className="rounded-lg h-64 overflow-hidden">
+            <div className="rounded-lg h-64 overflow-hidden border-2 border-fuchsia-600">
               <img
                 alt="content"
                 className="object-cover object-center h-full w-full"
@@ -56,7 +56,7 @@ function ViewDocument() {
               </div>
               <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
                 <p className="leading-relaxed text-lg mb-4">
-                  <b>Issued On:</b> 28th August 2021
+                  <b>Issued On:</b> 29th August 2021
                   <br />
                   <b>IPFS Hash:</b> {document[1]}
                   <br />

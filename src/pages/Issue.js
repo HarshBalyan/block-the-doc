@@ -2,6 +2,8 @@ import { useState } from "react";
 import Button from "../components/Button";
 import PageHeading from "../components/PageHeading";
 import { mintCertificate } from "../utils/ContractProvider";
+import Swal from "sweetalert2";
+
 const { create } = require("ipfs-http-client");
 
 function Issue() {
@@ -19,11 +21,21 @@ function Issue() {
     };
   }
 
+  function showLoader() {
+    Swal.fire({
+      title: "Please Wait...",
+      html: "<img src='https://i.giphy.com/media/7E3dz83Pvtdmg/giphy.webp'/>",
+      showConfirmButton: false,
+    });
+  }
+
   async function issueCertificate(e) {
     e.preventDefault();
     const client = create("https://ipfs.infura.io:5001");
     const ipfsHash = (await client.add(fileBuffer)).path;
+
     await mintCertificate(recipientAddress, name, ipfsHash);
+    showLoader();
   }
 
   return (
