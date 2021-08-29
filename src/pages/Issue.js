@@ -1,7 +1,25 @@
+import { useState } from "react";
 import Button from "../components/Button";
 import PageHeading from "../components/PageHeading";
 
 function Issue() {
+  const [fileBuffer, setFileBuffer] = useState();
+
+  // Capture the file and send to IPFS
+  function captureFile(e) {
+    let file = e.target.files[0];
+    const reader = new window.FileReader();
+    reader.readAsArrayBuffer(file);
+    reader.onloadend = () => {
+      setFileBuffer(Buffer(reader.result));
+    };
+  }
+
+  function issueCertificate(e) {
+    e.preventDefault();
+    console.log("submitted");
+  }
+
   return (
     <section className="text-gray-600 body-font relative ">
       <PageHeading title="Issue Certificate" />
@@ -12,44 +30,47 @@ function Issue() {
           </p>
         </div>
         <div className="mx-auto">
-          <div className="flex flex-wrap -m-2">
-            <div className="p-2 w-full">
-              <div className="relative">
-                <label
-                  htmlFor="name"
-                  className="leading-7 text-sm text-gray-600"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                />
+          <form onSubmit={issueCertificate}>
+            <div className="flex flex-wrap -m-2">
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="p-2 w-full">
-              <div className="relative">
-                <label
-                  htmlFor="file"
-                  className="leading-7 text-sm text-gray-600"
-                >
-                  Certificate (.jpeg, .jpeg,.png allowed)
-                </label>
-                <input
-                  type="file"
-                  id="file"
-                  name="file"
-                  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                />
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <label
+                    htmlFor="file"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Certificate (.jpeg, .jpeg,.png allowed)
+                  </label>
+                  <input
+                    type="file"
+                    id="file"
+                    name="file"
+                    onChange={captureFile}
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="p-4 w-full text-center">
-              <Button label="Issue Certificate" />
+              <div className="p-4 w-full text-center">
+                <Button label="Issue Certificate" />
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>
