@@ -18,6 +18,18 @@ async function mintCertificate(recipientAddress, name, ipfsHash) {
   console.log(response);
 }
 
+async function getMyCertificates() {
+  let certificates;
+  const contract = getCertificateContract();
+  const canViewAllCertificates = await isIssuer();
+  if (canViewAllCertificates) {
+    certificates = await contract.issuedCertificates();
+  } else {
+    certificates = await contract.myCertificates();
+  }
+  return certificates;
+}
+
 async function isIssuer() {
   const contract = getCertificateContract();
   const issuerAddress = await contract.getIssuer();
@@ -25,4 +37,4 @@ async function isIssuer() {
   return issuerAddress === currentAddress;
 }
 
-export { isIssuer, mintCertificate };
+export { isIssuer, mintCertificate, getMyCertificates };

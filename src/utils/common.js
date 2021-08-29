@@ -18,4 +18,13 @@ async function getSelectedAddress() {
   return await signer.getAddress();
 }
 
-export { requestAccount, getContract, getSelectedAddress };
+function getImgUrlFromIpfsHash(hash) {
+  return "https://ipfs.infura.io/ipfs/" + hash;
+}
+
+export {
+  requestAccount,
+  getContract,
+  getSelectedAddress,
+  getImgUrlFromIpfsHash,
+};
