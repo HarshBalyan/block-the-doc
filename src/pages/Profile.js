@@ -19,8 +19,8 @@ function Profile() {
               <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
-                  src="https://dummyimage.com/720x400"
-                  alt="blog"
+                  src="https://ipfs.infura.io/ipfs/QmYJu2yroqrX65TY27xSsEtFQr78mGAo4isYm11jGGoiu4"
+                  alt="Certificate"
                 />
                 <div className="p-6">
                   <h1 className="title-font text-lg font-medium text-gray-900 mb-3">

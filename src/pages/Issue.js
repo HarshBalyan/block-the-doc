@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import PageHeading from "../components/PageHeading";
+const { create } = require("ipfs-http-client");
 
 function Issue() {
   const [fileBuffer, setFileBuffer] = useState();
@@ -15,9 +16,11 @@ function Issue() {
     };
   }
 
-  function issueCertificate(e) {
+  async function issueCertificate(e) {
     e.preventDefault();
-    console.log("submitted");
+    const client = create("https://ipfs.infura.io:5001");
+    const ipfsHash = await client.add(fileBuffer);
+    console.log(ipfsHash);
   }
 
   return (
