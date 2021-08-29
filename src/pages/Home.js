@@ -1,13 +1,19 @@
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import { requestAccount } from "../utils/common";
+import { isIssuer } from "../utils/ContractProvider";
 
 function Home() {
   let history = useHistory();
 
   async function signIn() {
     await requestAccount();
-    history.push("/issue");
+    const canIssueContract = await isIssuer();
+    if (canIssueContract) {
+      history.push("/issue");
+    } else {
+      history.push("/my-profile");
+    }
   }
 
   return (
