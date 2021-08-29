@@ -24,12 +24,22 @@ contract Certificate is ERC721 {
         return ownedCertificates[msg.sender];
     }
     
+    // FIX  me for a _tokenId that does not exist
     function certificateDetails(uint256 _tokenId) external view returns(CertificateMeta memory) {
         return certificates[_tokenId];
     }
     
+    function issuedCertificates() public view returns(CertificateMeta[] memory) {
+        require(_isIssuer(msg.sender), "Only issuer can view the issued certificates!");
+        return certificates;
+    }
+
+    function getIssuer() public view returns (address) {
+        return _issuer;
+    }
+
     function mintAndTransfer(address _recipient, string memory _name, string memory _fileHash) external {
-        require(msg.sender == _issuer, "Only issuer can mint!");
+        require(_isIssuer(msg.sender), "Only issuer can mint!");
         
         uint tokenId = certificates.length;
         CertificateMeta memory meta = CertificateMeta({
