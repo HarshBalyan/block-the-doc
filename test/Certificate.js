@@ -1,14 +1,14 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("NFT Document Contract", () => {
-	let NFTDocumentContract, contract;
+describe("Certificate", () => {
+	let Certificate, contract;
 
 	beforeEach(async () => {
-		NFTDocumentContract = await ethers.getContractFactory(
-			"NFTDocumentContract"
+		Certificate = await ethers.getContractFactory(
+			"Certificate"
 		);
-		contract = await NFTDocumentContract.deploy();
+		contract = await Certificate.deploy();
 	});
 
 	it("emit greeting event when greet function is called", async () => {
