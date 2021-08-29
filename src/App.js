@@ -19,7 +19,7 @@ function App() {
           <Route path="/my-profile">
             <Profile />
           </Route>
-          <Route path="/view-document">
+          <Route path="/view-document/:id">
             <ViewDocument />
           </Route>
           <Route path="/">

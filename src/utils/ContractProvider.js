@@ -30,6 +30,12 @@ async function getMyCertificates() {
   return certificates;
 }
 
+async function getCertificateDetails(token) {
+  const contract = getCertificateContract();
+  const details = await contract.certificateDetails(token);
+  return details;
+}
+
 async function isIssuer() {
   const contract = getCertificateContract();
   const issuerAddress = await contract.getIssuer();
@@ -37,4 +43,4 @@ async function isIssuer() {
   return issuerAddress === currentAddress;
 }
 
-export { isIssuer, mintCertificate, getMyCertificates };
+export { isIssuer, mintCertificate, getMyCertificates, getCertificateDetails };
