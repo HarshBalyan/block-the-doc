@@ -25,22 +25,9 @@ function Home() {
             <br className="hidden lg:inline-block" />
             on Ethereum Blockchain
           </h1>
-          <ul className="list-disc">
-            <li>
-              Trustless issuance of certificates as NFTs to the recipient.
-            </li>
-            <li>
-              The underlying certificate is attached to an NFT will be stored on
-              a distributed file system(e.g. IPFS) This will remove the need for
-              issuer or recipient to secure an accessible copy of the
-              certificate
-            </li>
-            <li>
-              Document can't be forged as docs are stored against a
-              cryptographic hash which change on any attempt made to change the
-              doc
-            </li>
-          </ul>
+          <p className="text-2xl font-bold">
+            Let the blockchain take care of your achievements
+          </p>
         </div>
         <div className="lg:max-w-lg lg:w-full py-4 md:w-1/2 w-5/6 text-center border-2 border-fuchsia-600 rounded-md">
           <img
